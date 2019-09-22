@@ -3,7 +3,7 @@ var apiKey = "bB8FrIVzuWKq1ovd36ElbBSdYruDc9FJ";
 
 for (var i = 0; i < topics.length; i++) {
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topics[i] + "&limit=2&rating=pg-13&apikey=" + apiKey;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topics[i] + "&limit=5&rating=pg-13&apikey=" + apiKey;
 
     $.ajax({
         url: queryURL,
@@ -17,14 +17,18 @@ for (var i = 0; i < topics.length; i++) {
         for (var j = 0; j < results.length; j++) {
             var gifDiv = $("<div>");
             var p = $("<p>").text("Rating: " + results[j].rating);
+            p.css("text-align", "center");
             var gifImage = $("<img>");
+            gifImage.addClass("gifs");
             gifImage.attr("src", results[j].images.fixed_height_still.url);
             gifImage.attr("data-still", results[j].images.fixed_height_still.url);
             gifImage.attr("data-state", "still");
             gifImage.attr("data-animate", results[j].images.fixed_height.url);
-            gifImage.addClass("gifs");
+            gifDiv.css("display", "inline-block");
+            gifDiv.css("padding", "5px");
             gifDiv.append(p);
             gifDiv.append(gifImage);
+
             $(".gifHolder").prepend(gifDiv);
         }
         
