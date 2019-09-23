@@ -64,7 +64,7 @@ $(document).ready(function () {
             if (state === "still") {
                 $(this).attr("src", $(this).attr("data-animate"));
                 $(this).attr("data-state", "animate");
-            } else {
+            } else if (state === "animate") {
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
             }
@@ -84,32 +84,10 @@ $(document).ready(function () {
         showButtons();
     });
 
-    
-    // $(".gifDiv").on("click", function (e) {
-    //     e.preventDefault();
-        
-    //     console.log("Success: " + $(this).attr("data-state"));
-
-    //     var state = $(this).attr("data-state");
-
-    //     if (state === "still") {
-    //         $(this).attr("src", $(this).attr("data-animate"));
-    //         $(this).attr("data-state", "animate");
-    //     } else {
-    //         $(this).attr("src", $(this).attr("data-still"));
-    //         $(this).attr("data-state", "still");
-    //     }
-    // });
-
+    //Listens for clicks to load the gifs and to start/stop gifs.
     $(document).on("click", ".topic-button", showTopicGifs);
     $(document).on("click", ".indGif", stillPlay);
 
     showButtons();
-
-
-
-
-
-
 
 });
