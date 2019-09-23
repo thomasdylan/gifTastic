@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
@@ -17,14 +18,21 @@
             <div class="col-lg-12" id="button-holder"></div>
         </div>
         <div class="row">
+
             <div class="col-lg-8 gifHolder"></div>
+
             <div class="col-lg-4">
-                <form id="new-topic">
-                    <label for="input">Add topic</label>
-                    <input type="text" id="input">
-                    <button id="add-topic" type="button" value="Add a new topic">Add</button>
-                </form>
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-group" id="new-topic">
+                            <label for="input"></label>
+                            <input type="text" id="input" placeholder="Add a Topic">
+                            <button id="add-topic" type="button" class="btn btn-success" value="">Add</button>
+                        </form>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

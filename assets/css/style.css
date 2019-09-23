@@ -1,1 +1,7 @@
+body {
+    background-image: url("../images/background.png"); 
+}
 
+p {
+    font-family: 'Anton', sans-serif;
+}

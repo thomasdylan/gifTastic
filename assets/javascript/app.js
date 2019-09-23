@@ -24,7 +24,7 @@ $(document).ready(function () {
             // Looping through each index of response.data
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $("<div>");
-                var p = $("<p>").text("Rating: " + results[i].rating);
+                var p = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
                 p.css("text-align", "center");
                 var gifImage = $("<img>");
                 gifImage.addClass("indGif");
@@ -32,7 +32,9 @@ $(document).ready(function () {
                 gifImage.attr("data-state", "still");
                 gifImage.attr("data-still", results[i].images.fixed_height_still.url);
                 gifImage.attr("data-animate", results[i].images.fixed_height.url);
-                gifDiv.addClass("gifs")
+                gifDiv.addClass("gifs");
+                gifDiv.addClass("card");
+                gifDiv.addClass("card-body m-1");
                 gifDiv.css("display", "inline-block");
                 gifDiv.css("padding", "5px");
                 gifDiv.append(p);
@@ -46,7 +48,7 @@ $(document).ready(function () {
     function showButtons() {
         for (var i = 0; i < topics.length; i++) {
             var topicButton = $("<button>");
-            topicButton.addClass("topic-button");
+            topicButton.addClass("topic-button btn btn-info");
             topicButton.attr("data-name", topics[i]);
             topicButton.text(topics[i]);
             topicButton.css("margin", "5px");
@@ -56,9 +58,6 @@ $(document).ready(function () {
 
     //Switches the gif between still and playing when clicked.
     function stillPlay() {
-        $("img").on("click", function () {
-            console.log("Success: " + $(this).attr("data-state"));
-
             var state = $(this).attr("data-state");
 
             if (state === "still") {
@@ -68,7 +67,7 @@ $(document).ready(function () {
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
             }
-        });
+        
     }
 
     //When clicking the add button a button with the field value is created.
@@ -80,7 +79,6 @@ $(document).ready(function () {
             topics.push(newTopic);
         }
         $("#button-holder").empty();
-        $("#input").text("");
         showButtons();
     });
 
