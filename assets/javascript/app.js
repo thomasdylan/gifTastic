@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var topics = ["CS:GO", "Fallout 3", "Borderlands 3"];
+    var topics = ["Funny", "Football", "Birthday"];
     var apiKey = "bB8FrIVzuWKq1ovd36ElbBSdYruDc9FJ";
 
     //This stops the enter key from refreshing the page and clearing the buttons.
